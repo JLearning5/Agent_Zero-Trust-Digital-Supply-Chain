@@ -143,7 +143,6 @@ export default function ImplementationLab() {
   const [result, setResult] = useState<EvaluationResult | null>(null)
   const [auditLog, setAuditLog] = useState<AuditEntry[]>(() => readLocalAuditRecords())
   const [auditSource, setAuditSource] = useState<AuditSource>('local')
-  const [auditMessage, setAuditMessage] = useState<string | null>(null)
   const [isAuditSyncing, setIsAuditSyncing] = useState(false)
 
   useEffect(() => {
@@ -159,7 +158,6 @@ export default function ImplementationLab() {
 
         setAuditLog(response.records)
         setAuditSource(response.source)
-        setAuditMessage(response.message)
       })
       .finally(() => {
         if (active) {
@@ -184,7 +182,6 @@ export default function ImplementationLab() {
 
     setAuditLog(persisted.records)
     setAuditSource(persisted.source)
-    setAuditMessage(persisted.message)
     setIsAuditSyncing(false)
   }
 
@@ -413,7 +410,6 @@ export default function ImplementationLab() {
               <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <h3 className="text-2xl text-white">Audit Trail</h3>
-                  <p className="mt-2 text-sm text-slate-400">Recent implementation-lab decisions stay visible even if sync falls back locally.</p>
                 </div>
 
                 <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm ${auditSourceMeta[auditSource].tone}`}>
@@ -421,8 +417,6 @@ export default function ImplementationLab() {
                   <span>{isAuditSyncing ? 'Syncing' : auditSourceMeta[auditSource].label}</span>
                 </div>
               </div>
-
-              {auditMessage && <p className="mb-4 rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-slate-400">{auditMessage}</p>}
 
               {auditLog.length === 0 && <p className="text-sm text-slate-400">No events yet.</p>}
 

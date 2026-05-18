@@ -20,7 +20,7 @@ export default function Navigation({ currentPath, scrollY }: NavigationProps) {
         isScrolled ? 'glass border-b border-white/10 shadow-[0_10px_40px_rgba(8,6,4,0.32)]' : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[92rem] px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <a href="./index.html" className="group flex items-center gap-3">
             <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl border border-amber-500/20 bg-amber-500/10">
@@ -41,7 +41,7 @@ export default function Navigation({ currentPath, scrollY }: NavigationProps) {
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`rounded-full px-3 py-2 font-mono text-[11px] uppercase tracking-[0.22em] transition-colors ${
+                  className={`whitespace-nowrap rounded-full px-3 py-2 font-mono text-[10px] uppercase tracking-[0.18em] transition-colors ${
                     isActive
                       ? 'border border-amber-500/20 bg-amber-500/10 text-amber-200'
                       : 'text-slate-300 hover:bg-white/5 hover:text-amber-200'
@@ -56,7 +56,7 @@ export default function Navigation({ currentPath, scrollY }: NavigationProps) {
           <div className="hidden lg:block">
             <a
               href="./implementation-lab.html"
-              className="rounded-full border border-amber-500/30 bg-amber-500/15 px-5 py-2 text-sm font-medium text-amber-200 hover:-translate-y-0.5 hover:bg-amber-500/25"
+              className="whitespace-nowrap rounded-full border border-amber-500/30 bg-amber-500/15 px-5 py-2 text-sm font-medium text-amber-200 hover:-translate-y-0.5 hover:bg-amber-500/25"
             >
               Launch Lab
             </a>

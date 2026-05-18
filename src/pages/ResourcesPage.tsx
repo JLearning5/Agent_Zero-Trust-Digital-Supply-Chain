@@ -131,12 +131,6 @@ export default function ResourcesPage() {
                 })}
               </div>
 
-              <div className="mt-6 rounded-[22px] border border-amber-500/20 bg-amber-500/10 p-4">
-                <p className="text-sm leading-relaxed text-amber-100/90">
-                  Sensitive infrastructure credentials are intentionally not published on this page. The frontend only exposes the
-                  public Render URL, GitHub repository, Supabase project endpoint, and a Gmail compose shortcut.
-                </p>
-              </div>
             </div>
           </div>
         </div>
