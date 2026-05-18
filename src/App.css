@@ -1,0 +1,83 @@
+*:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.85);
+  outline-offset: 2px;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.text-gradient,
+.text-gradient-alt {
+  background-size: 200% auto;
+  animation: gradient-shift 7s ease infinite;
+}
+
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 246, 221, 0.05), transparent 35%);
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 26px 70px rgba(8, 6, 4, 0.42),
+    inset 0 1px 0 rgba(255, 246, 221, 0.07);
+}
+
+section {
+  position: relative;
+}
+
+button,
+a {
+  user-select: none;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+img {
+  background-color: rgba(48, 35, 26, 0.45);
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media print {
+  .glass-card,
+  .glass {
+    background: white !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  nav,
+  footer {
+    display: none !important;
+  }
+}
