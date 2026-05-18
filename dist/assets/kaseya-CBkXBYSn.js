@@ -1,0 +1,1 @@
+import{m as a,j as t}from"./mountPage-Dot4ZzzW.js";import{C as s}from"./CaseStudyDetailPage-8UypR7Oh.js";import"./download-iJ7ZJ42O.js";import"./file-text-Bi-by7w-.js";a(t.jsx(s,{"code-path":"src\\entries\\kaseya.tsx:4:11",currentPath:"kaseya.html",slug:"kaseya"}));
